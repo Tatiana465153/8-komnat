@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0e5">
+  <meta name="description" content="8 комнат — лёгкий путь к личной Карте возвращения к себе от проекта «Тихая опора».">
+  <title>8 комнат · Тихая опора</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" id="brandLink" aria-label="На главную">
+      <span class="brand-mark">Т</span>
+      <span>
+        <strong>Тихая опора</strong>
+        <small>жить не громче, а глубже</small>
+      </span>
+    </a>
+    <button class="quiet-button hidden" id="restartTop" type="button">Начать заново</button>
+  </header>
+
+  <main id="app" aria-live="polite">
+    <section class="screen intro-screen" id="introScreen">
+      <div class="intro-copy">
+        <p class="eyebrow">Небольшое путешествие к себе</p>
+        <h1>Восемь комнат.<br><em>И ни одной с пыльным сервантом.</em></h1>
+        <p class="lead">Вы пройдёте путь от пространства вокруг до первого шага вперёд. Короткие вопросы помогут заметить главное — без разбора себя на винтики.</p>
+        <div class="intro-actions">
+          <button class="primary-button" id="startButton" type="button">
+            <span>Войти в первую комнату</span>
+            <span aria-hidden="true">→</span>
+          </button>
+          <p class="time-note"><span aria-hidden="true">◷</span> 8–12 минут · ответы остаются в этой вкладке</p>
+        </div>
+      </div>
+
+      <div class="door-visual" aria-hidden="true">
+        <div class="door-frame">
+          <div class="door-light"></div>
+          <div class="door-panel">
+            <span class="door-number">8</span>
+            <span class="door-handle"></span>
+          </div>
+        </div>
+        <p>Можно заходить такой, какая вы есть.<br>Даже список дел оставьте у двери.</p>
+      </div>
+    </section>
+
+    <section class="screen journey-screen hidden" id="journeyScreen">
+      <aside class="progress-panel" aria-label="Прогресс">
+        <div class="progress-heading">
+          <span id="progressLabel">Комната 1 из 8</span>
+          <strong id="progressPercent">12%</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <span id="progressFill"></span>
+        </div>
+        <nav class="room-dots" id="roomDots" aria-label="Комнаты"></nav>
+        <p class="save-status"><span class="save-dot"></span> Прогресс сохранён в этой вкладке</p>
+      </aside>
+
+      <article class="room-card" id="roomCard">
+        <div class="room-topline">
+          <span class="room-index" id="roomIndex">01</span>
+          <span class="room-whisper" id="roomWhisper"></span>
+        </div>
+        <p class="room-kicker" id="roomKicker"></p>
+        <h2 id="roomTitle"></h2>
+        <p class="room-intro" id="roomIntro"></p>
+
+        <form id="roomForm" novalidate>
+          <div id="questionsContainer"></div>
+          <p class="form-message" id="formMessage" role="alert"></p>
+          <div class="nav-actions">
+            <button class="secondary-button" id="backButton" type="button"><span aria-hidden="true">←</span> Назад</button>
+            <button class="primary-button" id="nextButton" type="submit"><span>Дальше</span><span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+      </article>
+    </section>
+
+    <section class="screen result-screen hidden" id="resultScreen">
+      <div class="result-heading">
+        <p class="eyebrow">Вы прошли все восемь комнат</p>
+        <h1>Ваша Карта<br><em>возвращения к себе</em></h1>
+        <p>Не приговор, не диагноз и не новый список «надо». Это ваши собственные слова, собранные в понятный маршрут.</p>
+      </div>
+
+      <div class="map-shell" id="mapShell">
+        <div class="map-cover">
+          <div>
+            <span class="map-label">Личная карта</span>
+            <h2 id="mapName">Мой путь к себе</h2>
+          </div>
+          <span class="map-date" id="mapDate"></span>
+        </div>
+        <div class="map-summary" id="mapSummary"></div>
+        <div class="map-steps">
+          <div class="steps-heading">
+            <span>Ваши красивые шаги</span>
+            <small>не все сразу — мы же не переезжаем за один вечер</small>
+          </div>
+          <ol id="personalSteps"></ol>
+        </div>
+        <blockquote id="closingPhrase"></blockquote>
+        <p class="map-signature">Татьяна · Тихая опора</p>
+      </div>
+
+      <div class="result-actions">
+        <button class="primary-button" id="printButton" type="button"><span>Сохранить карту в PDF</span><span aria-hidden="true">↓</span></button>
+        <button class="secondary-button" id="restartButton" type="button">Пройти ещё раз</button>
+      </div>
+      <p class="privacy-note">Ваши ответы не отправляются и не публикуются. Они живут только в этой вкладке браузера.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>8 комнат · 2026</span>
+    <span>Тихо. Честно. С каплей блеска.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
